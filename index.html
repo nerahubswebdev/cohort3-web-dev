@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <style>
+      /* general style */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Arial", sans-serif;
+        color: black;
+        line-height: 1.6;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* header styling start */
+      header {
+        /* background-color: rgba(
+          51,
+          51,
+          51,
+          0.8
+        );  */
+        background-color: white;
+        padding: 10px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .nav {
+        display: flex;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: rgba(
+          29,
+          29,
+          29,
+          0.9
+        ); /* Darker background for the dropdown */
+        display: none; /* Hidden by default */
+        flex-direction: column;
+      }
+
+      .nav-desktop {
+        display: flex; /* Show the desktop nav */
+      }
+
+      .nav-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+
+      .nav-list li {
+        margin: 0 7px;
+        text-align: center;
+      }
+
+      .nav-list a {
+        /* color: #fff; */
+        text-decoration: none;
+        padding: 10px 16px;
+        transition: background 0.3s;
+      }
+
+      .nav-list a:hover {
+        background: rgba(47, 43, 43, 0.2);
+        border-radius: 4px;
+      }
+
+      /* header styling end */
+
+      /* hero section styling start */
+      .hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        background-color: #f8f9fa; /* Light background for contrast */
+        padding: 20px;
+      }
+
+      .hero-container {
+        display: flex;
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        /* border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
+        flex-direction: row; /* Default to row direction */
+      }
+
+      .description {
+        flex: 1;
+        padding: 20px;
+        max-width: 600px; /* Limiting the width of the description */
+      }
+
+      .description h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        color: black;
+      }
+
+      .description p {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        margin-bottom: 10px;
+      }
+
+      .image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* margin-top: 20px; */
+        padding: 20px;
+      }
+
+      .image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px; /* Optional: rounding the image corners */
+      }
+
+      /* Media query for smaller screens */
+      @media (max-width: 768px) {
+        .hero-container {
+          flex-direction: column; /* Switch to column direction on smaller screens */
+        }
+      }
+
+      /* hero section styling end */
+
+      /* About section style start */
+      .about {
+        text-align: center;
+        background-color: #f4f4f4;
+        color: black;
+      }
+      .about p {
+        max-width: 800px;
+        margin: auto;
+        font-size: 1.1em;
+      }
+
+      /* About section style start */
+
+      /* Skills sectionstyle start  */
+      .skills {
+        /* color: black; */
+      }
+      .skills .skill-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-top: 20px;
+      }
+      .skill-item {
+        text-align: center;
+      }
+      .skill-item img {
+        width: 60px;
+        height: 60px;
+      }
+
+      /* Skills sectionstyle end  */
+
+      /* Projects section style start */
+      .projects {
+        background-color: #f8f9fa;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 30px;
+      }
+      .project-item {
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 10px;
+        transition: transform 0.8s ease;
+      }
+      .project-item:hover {
+        transform: translateY(-10px);
+      }
+      .project-item img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+
+      /* Projects section style end */
+
+      /* experience styles start */
+
+      .experience-section {
+        margin: 50px auto;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .experience-section h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      .experience-section p {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+      }
+
+      .experience-card {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        flex-direction: column; /* Default to column for small screens */
+        text-align: left;
+        padding: 30px;
+      }
+
+      .experience-details {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .exlogo {
+        width: 150px;
+        margin-right: 20px;
+      }
+
+      .role h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+
+      ul {
+        list-style-type: disc;
+        padding-left: 20px;
+      }
+
+      .date {
+        font-size: 1rem;
+        color: #b3b3b3;
+        margin-left: auto; /* Align the date to the right */
+      }
+
+      /* experience styles end */
+
+      /* Second project design style start */
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 1200px;
+        gap: 20px;
+      }
+
+      /* Container Styling */
+      .container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        background-color: #3a4552;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .image-section {
+        flex: 1;
+        padding: 20px;
+        background-color: #2f3748;
+      }
+
+      .image-section img {
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      .content-section {
+        flex: 1;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .skill_title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: white;
+      }
+
+      .skill_p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        color: white;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .tags span {
+        background-color: #4b5563;
+        padding: 8px 15px;
+        border-radius: 15px;
+        font-size: 0.9rem;
+        color: #dfe3e8;
+        white-space: nowrap;
+      }
+
+      /* Second project design style end */
+
+      /* Media query for larger screens (desktops) */
+      /* @media (min-width: 768px) {
+        .experience-card {
+          flex-direction: row; 
+        }
+      }
+
+      @media (min-width: 1200px) {
+        .experience-card {
+          padding: 30px;
+        }
+      } */
+
+      /* hamburger styling start */
+
+      .menu-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+      }
+
+      .bar {
+        height: 3px;
+        width: 25px;
+        background-color: gray;
+        margin: 4px 0;
+      }
+      /* hamburger styling end */
+
+      /* Responsive Styles */
+      @media screen and (max-width: 850px) {
+        header,
+        section,
+        footer {
+          padding: 20px;
+        }
+        h1 {
+          font-size: 1.5rem;
+        }
+
+        p {
+          font-size: 0.9rem;
+        }
+
+        .menu-toggle {
+          display: flex; /* Show hamburger menu */
+        }
+
+        .nav-desktop {
+          display: none; /* Hide desktop nav on small screens */
+        }
+
+        .nav.active {
+          display: flex; /* Show nav when active */
+        }
+
+        .nav-list {
+          flex-direction: column; /* Stack items vertically for mobile */
+          align-items: center; /* Center align items */
+        }
+
+        .nav-list li {
+          margin: 10px 0; /* Vertical margin for mobile */
+        }
+        .nav-list a {
+          color: white;
+        }
+
+        .hero h1 {
+          font-size: 2em;
+        }
+        .hero p {
+          font-size: 1em;
+        }
+        .skills .skill-list {
+          /* flex-direction: column;
+          align-items: center; */
+        }
+        .skill-item {
+          margin-bottom: 20px;
+        }
+
+        .exlogo {
+          width: 90px;
+          margin-right: 10px;
+        }
+        .projects {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .wrapper {
+          gap: 10px;
+        }
+
+        .container {
+          flex-direction: column;
+        }
+
+        .content-section {
+          padding: 20px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .projects {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* main tag style start */
+      main {
+        padding: 20px;
+        max-width: 1200px;
+        margin: auto;
+      }
+      /* main tag style end */
+
+      /* section tag style start */
+      section {
+        margin: 20px 0;
+        /* background-color: rgba(0, 0, 0, 0.6); */
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+      }
+      /* section tag style start */
+
+      /* h1 and h2 tag style start */
+      h1,
+      h2 {
+        color: black;
+      }
+
+      /* h1 and h2 tag style start */
+
+      /* contact style start */
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      form input,
+      form textarea {
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 4px;
+        border: none;
+        outline: none;
+      }
+
+      form button {
+        padding: 10px;
+        background-color: gray;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        /* transition: background-color 0.3s ease, color 0.3s ease; */
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      form button:hover {
+        background-color: rgb(160, 157, 157);
+      }
+      /* contact style end */
+
+      /* Footer styles start */
+      footer {
+        text-align: center;
+        padding: 20px 0;
+        background-color: rgba(51, 51, 51, 0.8);
+        color: #fff;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+      /* Footer styles end */
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="logo">My Logo</div>
+        <div class="menu-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <nav class="nav-desktop">
+          <ul class="nav-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#project2">Project2</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#project2">Project2</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-container">
+          <div class="description">
+            <h1>Hi, I’m Sagar 👋</h1>
+            <p>
+              I'm a full stack developer (React.js & Node.js) with a focus on
+              creating (and occasionally designing) exceptional digital
+              experiences that are fast, accessible, visually appealing, and
+              responsive.Even though I have been creating web applications for
+              over 7years, I still love it as if it was something new.
+            </p>
+            <p><strong>Location:</strong> Ahmedabad, India</p>
+            <p><strong>Status:</strong> Available for new projects</p>
+          </div>
+          <div class="image">
+            <img
+              src="https://t4.ftcdn.net/jpg/07/08/47/75/360_F_708477508_DNkzRIsNFgibgCJ6KoTgJjjRZNJD4mb4.jpg"
+              alt="Sagar's Photo"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>
+          I am a passionate full stack developer with experience in creating
+          dynamic web applications using modern technologies. My goal is to
+          build scalable and efficient web applications while continually
+          learning new skills.
+        </p>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <div class="skill-list">
+          <div class="skill-item">
+            <img
+              src="https://img.icons8.com/color/48/000000/html-5.png"
+              alt="HTML"
+            />
+            <h3>HTML</h3>
+          </div>
+          <div class="skill-item">
+            <img
+              src="https://img.icons8.com/color/48/000000/css3.png"
+              alt="CSS"
+            />
+            <h3>CSS</h3>
+          </div>
+          <div class="skill-item">
+            <img
+              src="https://img.icons8.com/color/48/000000/javascript--v1.png"
+              alt="JavaScript"
+            />
+            <h3>JavaScript</h3>
+          </div>
+          <div class="skill-item">
+            <img
+              src="https://img.icons8.com/color/48/000000/react-native.png"
+              alt="React"
+            />
+            <h3>React</h3>
+          </div>
+          <div class="skill-item">
+            <img
+              src="https://img.icons8.com/color/48/000000/nodejs.png"
+              alt="Node.js"
+            />
+            <h3>Node.js</h3>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2 style="padding-top: 10px; padding-bottom: 10px">My Projects</h2>
+        <div class="projects">
+          <div class="project-item">
+            <img
+              src="https://static.vecteezy.com/system/resources/previews/032/257/185/non_2x/wallpapers-for-the-beautiful-peacock-wallpaper-ai-generated-free-photo.jpg"
+              alt="Project One"
+            />
+            <h3>Project One</h3>
+            <p>A brief description of this project.</p>
+          </div>
+          <div class="project-item">
+            <img
+              src="https://static.vecteezy.com/system/resources/previews/032/257/185/non_2x/wallpapers-for-the-beautiful-peacock-wallpaper-ai-generated-free-photo.jpg"
+              alt="Project Two"
+            />
+            <h3>Project Two</h3>
+            <p>A brief description of this project.</p>
+          </div>
+          <div class="project-item">
+            <img
+              src="https://static.vecteezy.com/system/resources/previews/032/257/185/non_2x/wallpapers-for-the-beautiful-peacock-wallpaper-ai-generated-free-photo.jpg"
+              alt="Project Three"
+            />
+            <h3>Project Three</h3>
+            <p>A brief description of this project.</p>
+          </div>
+          <div class="project-item">
+            <img
+              src="https://static.vecteezy.com/system/resources/previews/032/257/185/non_2x/wallpapers-for-the-beautiful-peacock-wallpaper-ai-generated-free-photo.jpg"
+              alt="Project Four"
+            />
+            <h3>Project Four</h3>
+            <p>A brief description of this project.</p>
+          </div>
+          <div class="project-item">
+            <img
+              src="https://static.vecteezy.com/system/resources/previews/032/257/185/non_2x/wallpapers-for-the-beautiful-peacock-wallpaper-ai-generated-free-photo.jpg"
+              alt="Project Five"
+            />
+            <h3>Project Five</h3>
+            <p>A brief description of this project.</p>
+          </div>
+          <div class="project-item">
+            <img
+              src="https://static.vecteezy.com/system/resources/previews/032/257/185/non_2x/wallpapers-for-the-beautiful-peacock-wallpaper-ai-generated-free-photo.jpg"
+              alt="Project Six"
+            />
+            <h3>Project Six</h3>
+            <p>A brief description of this project.</p>
+          </div>
+          <div class="project-item">
+            <img
+              src="https://static.vecteezy.com/system/resources/previews/032/257/185/non_2x/wallpapers-for-the-beautiful-peacock-wallpaper-ai-generated-free-photo.jpg"
+              alt="Project Seven"
+            />
+            <h3>Project Seven</h3>
+            <p>A brief description of this project.</p>
+          </div>
+          <div class="project-item">
+            <img
+              src="https://static.vecteezy.com/system/resources/previews/032/257/185/non_2x/wallpapers-for-the-beautiful-peacock-wallpaper-ai-generated-free-photo.jpg"
+              alt="Project Eight"
+            />
+            <h3>Project Eight</h3>
+            <p>A brief description of this project.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience section -->
+      <section id="experience" class="experience-section">
+        <h2>Experience</h2>
+        <p>Here is a quick summary of my most recent experiences:</p>
+
+        <div class="experience-card">
+          <div class="experience-details">
+            <img
+              src="./images//Upwork-logo.svg.png"
+              alt="Upwork logo"
+              class="exlogo"
+            />
+            <div class="role">
+              <h3>Sr. Frontend Developer</h3>
+              <ul>
+                <li>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </li>
+                <li>
+                  Ut pretium arcu et massa semper, id fringilla leo semper.
+                </li>
+                <li>Sed quis justo ac magna.</li>
+                <li>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="date">Nov 2021 - Present</div>
+        </div>
+
+        <div class="experience-card">
+          <div class="experience-details">
+            <img
+              src="./images//Upwork-logo.svg.png"
+              alt="Upwork logo"
+              class="exlogo"
+            />
+            <div class="role">
+              <h3>Team Lead</h3>
+              <ul>
+                <li>Sed quis justo ac magna.</li>
+                <li>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </li>
+                <li>Sed quis justo ac magna.</li>
+                <li>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="date">Jul 2017 - Oct 2021</div>
+        </div>
+
+        <div class="experience-card">
+          <div class="experience-details">
+            <img
+              src="./images//Upwork-logo.svg.png"
+              alt="Upwork logo"
+              class="exlogo"
+            />
+            <div class="role">
+              <h3>Full Stack Developer</h3>
+              <ul>
+                <li>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </li>
+                <li>Sed quis justo ac magna.</li>
+                <li>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="date">Dec 2015 - May 2017</div>
+        </div>
+      </section>
+
+      <!-- Second Project Style -->
+      <section id="project2" class="wrapper">
+        <div class="container">
+          <div class="image-section">
+            <img
+              src="https://wallpapers.com/images/hd/beautiful-nature-pictures-2c29nke7owomq7la.jpg"
+              alt="Fiskil Screenshot"
+            />
+          </div>
+          <div class="content-section">
+            <h1 class="skill_title">Fiskil</h1>
+            <p class="skill_p">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis
+              in faucibus orci luctus et ultrices posuere cubilia curae.
+            </p>
+            <div class="tags">
+              <span>React</span>
+              <span>Next.js</span>
+              <span>Typescript</span>
+              <span>Nest.js</span>
+              <span>PostgreSQL</span>
+              <span>Tailwindcss</span>
+              <span>Figma</span>
+              <span>Cypress</span>
+              <span>Storybook</span>
+              <span>Git</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="image-section">
+            <img
+              src="https://wallpapers.com/images/hd/beautiful-nature-pictures-2c29nke7owomq7la.jpg"
+              alt="Fiskil Screenshot"
+            />
+          </div>
+          <div class="content-section">
+            <h1 class="skill_title">Fiskil</h1>
+            <p class="skill_p">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis
+              in faucibus orci luctus et ultrices posuere cubilia curae.
+            </p>
+            <div class="tags">
+              <span>React</span>
+              <span>Next.js</span>
+              <span>Typescript</span>
+              <span>Nest.js</span>
+              <span>PostgreSQL</span>
+              <span>Tailwindcss</span>
+              <span>Figma</span>
+              <span>Cypress</span>
+              <span>Storybook</span>
+              <span>Git</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="image-section">
+            <img
+              src="https://wallpapers.com/images/hd/beautiful-nature-pictures-2c29nke7owomq7la.jpg"
+              alt="Fiskil Screenshot"
+            />
+          </div>
+          <div class="content-section">
+            <h1 class="skill_title">Fiskil</h1>
+            <p class="skill_p">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis
+              in faucibus orci luctus et ultrices posuere cubilia curae.
+            </p>
+            <div class="tags">
+              <span>React</span>
+              <span>Next.js</span>
+              <span>Typescript</span>
+              <span>Nest.js</span>
+              <span>PostgreSQL</span>
+              <span>Tailwindcss</span>
+              <span>Figma</span>
+              <span>Cypress</span>
+              <span>Storybook</span>
+              <span>Git</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="image-section">
+            <img
+              src="https://wallpapers.com/images/hd/beautiful-nature-pictures-2c29nke7owomq7la.jpg"
+              alt="Fiskil Screenshot"
+            />
+          </div>
+          <div class="content-section">
+            <h1 class="skill_title">Fiskil</h1>
+            <p class="skill_p">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis
+              in faucibus orci luctus et ultrices posuere cubilia curae.
+            </p>
+            <div class="tags">
+              <span>React</span>
+              <span>Next.js</span>
+              <span>Typescript</span>
+              <span>Nest.js</span>
+              <span>PostgreSQL</span>
+              <span>Tailwindcss</span>
+              <span>Figma</span>
+              <span>Cypress</span>
+              <span>Storybook</span>
+              <span>Git</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="image-section">
+            <img
+              src="https://wallpapers.com/images/hd/beautiful-nature-pictures-2c29nke7owomq7la.jpg"
+              alt="Fiskil Screenshot"
+            />
+          </div>
+          <div class="content-section">
+            <h1 class="skill_title">Fiskil</h1>
+            <p class="skill_p">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis
+              in faucibus orci luctus et ultrices posuere cubilia curae.
+            </p>
+            <div class="tags">
+              <span>React</span>
+              <span>Next.js</span>
+              <span>Typescript</span>
+              <span>Nest.js</span>
+              <span>PostgreSQL</span>
+              <span>Tailwindcss</span>
+              <span>Figma</span>
+              <span>Cypress</span>
+              <span>Storybook</span>
+              <span>Git</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <form>
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea placeholder="Your Message" rows="6" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Mobile Nav -->
+    <script>
+      const mobileMenu = document.getElementById("mobile-menu");
+      const nav = document.querySelector(".nav");
+
+      mobileMenu.addEventListener("click", () => {
+        nav.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>
