@@ -1,0 +1,184 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Table</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Serial Number</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>Grade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>John Doe</td>
+            <td>john@example.com</td>
+            <td>Web Development</td>
+            <td>A</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Jane Smith</td>
+            <td>jane@example.com</td>
+            <td>Data Science</td>
+            <td>B+</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Alex Brown</td>
+            <td>alex@example.com</td>
+            <td>Cybersecurity</td>
+            <td>A-</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Table</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .table-container {
+        width: 100%;
+        overflow-x: auto;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 600px; /* Prevent table from shrinking too much */
+      }
+
+      thead {
+        background-color: rgba(35, 36, 53, 0.733);
+        color: white;
+      }
+
+      thead th {
+        padding: 15px 10px;
+        font-weight: 500;
+        text-transform: uppercase;
+        text-align: start;
+        white-space: nowrap; /* Prevent text wrap in headers */
+      }
+
+      tbody tr {
+        border-bottom: 1px solid #ddd;
+      }
+
+      tbody tr:hover {
+        background-color: #f1f1f1;
+      }
+
+      tbody td {
+        padding: 12px 10px;
+        color: #333;
+        white-space: nowrap; /* Prevent text wrap in cells */
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      @media (max-width: 768px) {
+        .table-container {
+          padding: 10px;
+        }
+
+        table {
+          width: 100%;
+        }
+
+        thead th {
+          padding: 10px 5px;
+        }
+
+        tbody td {
+          padding: 10px 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Serial Number</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>Grade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>John Doe</td>
+            <td>john@example.com</td>
+            <td>Web Development</td>
+            <td>A</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Jane Smith</td>
+            <td>jane@example.com</td>
+            <td>Data Science</td>
+            <td>B+</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Alex Brown</td>
+            <td>alex@example.com</td>
+            <td>Cybersecurity</td>
+            <td>A-</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
