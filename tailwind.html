@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Tailwind-Format</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Arial", sans-serif;
+        line-height: 1.6;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      h1,
+      h2 {
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="bg-white sticky top-0 z-1000 py-2">
+      <div
+        class="navbar max-w-[1200px] mx-auto flex justify-between items-center px-5"
+      >
+        <div class="logo text-2xl font-bold">My Logo</div>
+        <div
+          class="menu-toggle flex flex-col cursor-pointer md:hidden"
+          id="mobile-menu"
+        >
+          <span class="bar h-[3px] w-[25px] bg-gray-500 mb-1"></span>
+          <span class="bar h-[3px] w-[25px] bg-gray-500 mb-1"></span>
+          <span class="bar h-[3px] w-[25px] bg-gray-500 mb-1"></span>
+        </div>
+        <nav class="nav-desktop hidden md:flex">
+          <!-- Show desktop nav -->
+          <ul class="nav-list flex space-x-2">
+            <li>
+              <a
+                href="#home"
+                class="text-gray-700 hover:bg-gray-200 rounded py-2 px-4 transition"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#about"
+                class="text-gray-700 hover:bg-gray-200 rounded py-2 px-4 transition"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="#skills"
+                class="text-gray-700 hover:bg-gray-200 rounded py-2 px-4 transition"
+                >Skills</a
+              >
+            </li>
+            <li>
+              <a
+                href="#projects"
+                class="text-gray-700 hover:bg-gray-200 rounded py-2 px-4 transition"
+                >Projects</a
+              >
+            </li>
+            <li>
+              <a
+                href="#experience"
+                class="text-gray-700 hover:bg-gray-200 rounded py-2 px-4 transition"
+                >Experience</a
+              >
+            </li>
+            <li>
+              <a
+                href="#project2"
+                class="text-gray-700 hover:bg-gray-200 rounded py-2 px-4 transition"
+                >Project2</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contact"
+                class="text-gray-700 hover:bg-gray-200 rounded py-2 px-4 transition"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <nav
+          class="nav absolute top-12 left-0 right-0 bg-black bg-opacity-90 flex flex-col hidden"
+        >
+          <!-- Hide by default -->
+          <ul class="nav-list flex flex-col items-center">
+            <li class="my-2">
+              <a
+                href="#home"
+                class="text-white hover:bg-gray-700 rounded py-2 px-4 transition"
+                >Home</a
+              >
+            </li>
+            <li class="my-2">
+              <a
+                href="#about"
+                class="text-white hover:bg-gray-700 rounded py-2 px-4 transition"
+                >About</a
+              >
+            </li>
+            <li class="my-2">
+              <a
+                href="#skills"
+                class="text-white hover:bg-gray-700 rounded py-2 px-4 transition"
+                >Skills</a
+              >
+            </li>
+            <li class="my-2">
+              <a
+                href="#projects"
+                class="text-white hover:bg-gray-700 rounded py-2 px-4 transition"
+                >Projects</a
+              >
+            </li>
+            <li class="my-2">
+              <a
+                href="#experience"
+                class="text-white hover:bg-gray-700 rounded py-2 px-4 transition"
+                >Experience</a
+              >
+            </li>
+            <li class="my-2">
+              <a
+                href="#project2"
+                class="text-white hover:bg-gray-700 rounded py-2 px-4 transition"
+                >Project2</a
+              >
+            </li>
+            <li class="my-2">
+              <a
+                href="#contact"
+                class="text-white hover:bg-gray-700 rounded py-2 px-4 transition"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="p-5 max-w-screen-xl mx-auto">
+      <!-- hero section start -->
+      <section
+        id="home"
+        class="hero bg-gray-100 p-5 md:p-20 flex items-center justify-center py-8 rounded-lg"
+      >
+        <div
+          class="hero-container flex max-w-screen-xl w-full mx-auto flex-col md:flex-row"
+        >
+          <div class="description flex-1 p-5 max-w-2xl">
+            <h1 class="text-4xl mb-2 text-black">Hi, I’m Sagar 👋</h1>
+            <p class="text-lg leading-relaxed mb-2">
+              I'm a full stack developer (React.js & Node.js) with a focus on
+              creating (and occasionally designing) exceptional digital
+              experiences that are fast, accessible, visually appealing, and
+              responsive. Even though I have been creating web applications for
+              over 7 years, I still love it as if it was something new.
+            </p>
+            <p class="text-lg mb-2">
+              <strong>Location:</strong> Ahmedabad, India
+            </p>
+            <p class="text-lg">
+              <strong>Status:</strong> Available for new projects
+            </p>
+          </div>
+          <div class="image flex-1 flex justify-center items-center p-5">
+            <img
+              class="rounded-lg"
+              src="https://t4.ftcdn.net/jpg/07/08/47/75/360_F_708477508_DNkzRIsNFgibgCJ6KoTgJjjRZNJD4mb4.jpg"
+              alt="Sagar's Photo"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- hero section end -->
+      <!-- about section start -->
+      <section id="about" class="text-center bg-gray-200 text-black py-8">
+        <h2 class="text-2xl font-bold mb-4">About Me</h2>
+        <p class="max-w-3xl mx-auto text-lg">
+          I am a passionate full stack developer with experience in creating
+          dynamic web applications using modern technologies. My goal is to
+          build scalable and efficient web applications while continually
+          learning new skills.
+        </p>
+      </section>
+      <!-- about section end -->
+
+      <!-- skills section start -->
+      <section id="skills" class="py-8 bg-gray-100">
+        <h2 class="text-2xl font-bold text-center mb-6">Skills</h2>
+        <div class="flex flex-wrap justify-around mt-5">
+          <div class="text-center">
+            <img
+              class="w-15 h-15"
+              src="https://img.icons8.com/color/48/000000/html-5.png"
+              alt="HTML"
+            />
+            <h3 class="mt-2 text-lg">HTML</h3>
+          </div>
+          <div class="skill-item text-center">
+            <img
+              class="w-15 h-15"
+              src="https://img.icons8.com/color/48/000000/css3.png"
+              alt="CSS"
+            />
+            <h3 class="mt-2 text-lg">CSS</h3>
+          </div>
+          <div class="skill-item text-center">
+            <img
+              class="w-15 h-15"
+              src="https://img.icons8.com/color/48/000000/javascript--v1.png"
+              alt="JavaScript"
+            />
+            <h3 class="mt-2 text-lg">JavaScript</h3>
+          </div>
+          <div class="skill-item text-center">
+            <img
+              class="w-15 h-15"
+              src="https://img.icons8.com/color/48/000000/react-native.png"
+              alt="React"
+            />
+            <h3 class="mt-2 text-lg">React</h3>
+          </div>
+          <div class="skill-item text-center">
+            <img
+              class="w-15 h-15"
+              src="https://img.icons8.com/color/48/000000/nodejs.png"
+              alt="Node.js"
+            />
+            <h3 class="mt-2 text-lg">Node.js</h3>
+          </div>
+        </div>
+      </section>
+      <!-- skills section end -->
+
+      <!-- project section start -->
+      <section id="projects" class="py-8 bg-gray-200">
+        <h2 class="text-2xl font-bold text-center py-4">My Projects</h2>
+        <div
+          class="projects grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4"
+        >
+          <div
+            class="project-item bg-white shadow-md rounded-lg p-5 transition-transform duration-700 ease-in-out hover:-translate-y-2"
+          >
+            <img
+              class="w-full h-auto rounded-lg mb-4"
+              src="https://static.vecteezy.com/system/resources/previews/032/257/185/non_2x/wallpapers-for-the-beautiful-peacock-wallpaper-ai-generated-free-photo.jpg"
+              alt="Project One"
+            />
+            <h3 class="text-xl font-semibold">Project One</h3>
+            <p class="mt-2">A brief description of this project.</p>
+          </div>
+          <div
+            class="project-item bg-white shadow-md rounded-lg p-5 transition-transform duration-700 ease-in-out hover:-translate-y-2"
+          >
+            <img
+              class="w-full h-auto rounded-lg mb-4"
+              src="https://static.vecteezy.com/system/resources/previews/032/257/185/non_2x/wallpapers-for-the-beautiful-peacock-wallpaper-ai-generated-free-photo.jpg"
+              alt="Project Two"
+            />
+            <h3 class="text-xl font-semibold">Project Two</h3>
+            <p class="mt-2">A brief description of this project.</p>
+          </div>
+          <div
+            class="project-item bg-white shadow-md rounded-lg p-5 transition-transform duration-700 ease-in-out hover:-translate-y-2"
+          >
+            <img
+              class="w-full h-auto rounded-lg mb-4"
+              src="https://static.vecteezy.com/system/resources/previews/032/257/185/non_2x/wallpapers-for-the-beautiful-peacock-wallpaper-ai-generated-free-photo.jpg"
+              alt="Project Three"
+            />
+            <h3 class="text-xl font-semibold">Project Three</h3>
+            <p class="mt-2">A brief description of this project.</p>
+          </div>
+          <div
+            class="project-item bg-white shadow-md rounded-lg p-5 transition-transform duration-700 ease-in-out hover:-translate-y-2"
+          >
+            <img
+              class="w-full h-auto rounded-lg mb-4"
+              src="https://static.vecteezy.com/system/resources/previews/032/257/185/non_2x/wallpapers-for-the-beautiful-peacock-wallpaper-ai-generated-free-photo.jpg"
+              alt="Project Four"
+            />
+            <h3 class="text-xl font-semibold">Project Four</h3>
+            <p class="mt-2">A brief description of this project.</p>
+          </div>
+          <div
+            class="project-item bg-white shadow-md rounded-lg p-5 transition-transform duration-700 ease-in-out hover:-translate-y-2"
+          >
+            <img
+              class="w-full h-auto rounded-lg mb-4"
+              src="https://static.vecteezy.com/system/resources/previews/032/257/185/non_2x/wallpapers-for-the-beautiful-peacock-wallpaper-ai-generated-free-photo.jpg"
+              alt="Project Five"
+            />
+            <h3 class="text-xl font-semibold">Project Five</h3>
+            <p class="mt-2">A brief description of this project.</p>
+          </div>
+          <div
+            class="project-item bg-white shadow-md rounded-lg p-5 transition-transform duration-700 ease-in-out hover:-translate-y-2"
+          >
+            <img
+              class="w-full h-auto rounded-lg mb-4"
+              src="https://static.vecteezy.com/system/resources/previews/032/257/185/non_2x/wallpapers-for-the-beautiful-peacock-wallpaper-ai-generated-free-photo.jpg"
+              alt="Project Six"
+            />
+            <h3 class="text-xl font-semibold">Project Six</h3>
+            <p class="mt-2">A brief description of this project.</p>
+          </div>
+          <div
+            class="project-item bg-white shadow-md rounded-lg p-5 transition-transform duration-700 ease-in-out hover:-translate-y-2"
+          >
+            <img
+              class="w-full h-auto rounded-lg mb-4"
+              src="https://static.vecteezy.com/system/resources/previews/032/257/185/non_2x/wallpapers-for-the-beautiful-peacock-wallpaper-ai-generated-free-photo.jpg"
+              alt="Project Seven"
+            />
+            <h3 class="text-xl font-semibold">Project Seven</h3>
+            <p class="mt-2">A brief description of this project.</p>
+          </div>
+          <div
+            class="project-item bg-white shadow-md rounded-lg p-5 transition-transform duration-700 ease-in-out hover:-translate-y-2"
+          >
+            <img
+              class="w-full h-auto rounded-lg mb-4"
+              src="https://static.vecteezy.com/system/resources/previews/032/257/185/non_2x/wallpapers-for-the-beautiful-peacock-wallpaper-ai-generated-free-photo.jpg"
+              alt="Project Eight"
+            />
+            <h3 class="text-xl font-semibold">Project Eight</h3>
+            <p class="mt-2">A brief description of this project.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- project section end -->
+
+      <!-- experience section start -->
+      <section id="experience" class="py-8 px-4 text-center bg-gray-200">
+        <h2 class="text-2xl mb-2">Experience</h2>
+        <p class="text-lg mb-8">
+          Here is a quick summary of my most recent experiences:
+        </p>
+
+        <div
+          class="experience-card bg-white rounded-lg p-8 mb-5 flex flex-col justify-between text-left"
+        >
+          <div class="experience-details flex gap-5 items-center mb-2">
+            <img
+              src="./images/Upwork-logo.svg.png"
+              alt="Upwork logo"
+              class="exlogo w-36"
+            />
+            <div class="role">
+              <h3 class="text-xl mb-2">Sr. Frontend Developer</h3>
+              <ul class="list-disc pl-5">
+                <li>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </li>
+                <li>
+                  Ut pretium arcu et massa semper, id fringilla leo semper.
+                </li>
+                <li>Sed quis justo ac magna.</li>
+                <li>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="date text-gray-500 text-sm ml-auto">
+            Nov 2021 - Present
+          </div>
+        </div>
+
+        <div
+          class="experience-card bg-white rounded-lg p-8 mb-5 flex flex-col justify-between text-left"
+        >
+          <div class="experience-details flex gap-5 items-center mb-2">
+            <img
+              src="./images/Upwork-logo.svg.png"
+              alt="Upwork logo"
+              class="exlogo w-36"
+            />
+            <div class="role">
+              <h3 class="text-xl mb-2">Team Lead</h3>
+              <ul class="list-disc pl-5">
+                <li>Sed quis justo ac magna.</li>
+                <li>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </li>
+                <li>Sed quis justo ac magna.</li>
+                <li>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="date text-gray-500 text-sm ml-auto">
+            Jul 2017 - Oct 2021
+          </div>
+        </div>
+
+        <div
+          class="experience-card bg-white rounded-lg p-8 mb-5 flex flex-col justify-between text-left"
+        >
+          <div class="experience-details flex gap-5 items-center mb-2">
+            <img
+              src="./images/Upwork-logo.svg.png"
+              alt="Upwork logo"
+              class="exlogo w-36"
+            />
+            <div class="role">
+              <h3 class="text-xl mb-2">Full Stack Developer</h3>
+              <ul class="list-disc pl-5">
+                <li>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </li>
+                <li>Sed quis justo ac magna.</li>
+                <li>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="date text-gray-500 text-sm ml-auto">
+            Dec 2015 - May 2017
+          </div>
+        </div>
+      </section>
+
+      <!-- experience section end -->
+
+      <!-- project 2 section start -->
+      <section
+        id="project2"
+        class="flex flex-col py-8 px-4 space-y-4 bg-gray-100"
+      >
+        <div
+          class="flex flex-col lg:flex-row bg-[#3a4552] rounded-2xl overflow-hidden shadow-lg"
+        >
+          <div class="image-section flex-1 p-5 bg-[#2f3748]">
+            <img
+              src="https://wallpapers.com/images/hd/beautiful-nature-pictures-2c29nke7owomq7la.jpg"
+              alt="Fiskil Screenshot"
+              class="w-full rounded-lg"
+            />
+          </div>
+          <div class="content-section flex-1 p-10 flex flex-col justify-center">
+            <h1 class="skill_title text-2xl mb-5 text-white">Fiskil</h1>
+            <p class="skill_p text-base leading-6 mb-5 text-white">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis
+              in faucibus orci luctus et ultrices posuere cubilia curae.
+            </p>
+            <div class="tags flex flex-wrap gap-2">
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >React</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >Next.js</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >Typescript</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >Nest.js</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >PostgreSQL</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >Tailwindcss</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >Figma</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >Cypress</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >Storybook</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >Git</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col lg:flex-row w-full bg-[#3a4552] rounded-2xl overflow-hidden shadow-lg"
+        >
+          <div class="image-section flex-1 p-5 bg-[#2f3748]">
+            <img
+              src="https://wallpapers.com/images/hd/beautiful-nature-pictures-2c29nke7owomq7la.jpg"
+              alt="Fiskil Screenshot"
+              class="w-full rounded-lg"
+            />
+          </div>
+          <div class="content-section flex-1 p-10 flex flex-col justify-center">
+            <h1 class="skill_title text-2xl mb-5 text-white">Fiskil</h1>
+            <p class="skill_p text-base leading-6 mb-5 text-white">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis
+              in faucibus orci luctus et ultrices posuere cubilia curae.
+            </p>
+            <div class="tags flex flex-wrap gap-2">
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >React</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >Next.js</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >Typescript</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >Nest.js</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >PostgreSQL</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >Tailwindcss</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >Figma</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >Cypress</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >Storybook</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >Git</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col lg:flex-row w-full bg-[#3a4552] rounded-2xl overflow-hidden shadow-lg"
+        >
+          <div class="image-section flex-1 p-5 bg-[#2f3748]">
+            <img
+              src="https://wallpapers.com/images/hd/beautiful-nature-pictures-2c29nke7owomq7la.jpg"
+              alt="Fiskil Screenshot"
+              class="w-full rounded-lg"
+            />
+          </div>
+          <div class="content-section flex-1 p-10 flex flex-col justify-center">
+            <h1 class="skill_title text-2xl mb-5 text-white">Fiskil</h1>
+            <p class="skill_p text-base leading-6 mb-5 text-white">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis
+              in faucibus orci luctus et ultrices posuere cubilia curae.
+            </p>
+            <div class="tags flex flex-wrap gap-2">
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >React</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >Next.js</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >Typescript</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >Nest.js</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >PostgreSQL</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >Tailwindcss</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >Figma</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >Cypress</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >Storybook</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >Git</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col lg:flex-row w-full bg-[#3a4552] rounded-2xl overflow-hidden shadow-lg"
+        >
+          <div class="image-section flex-1 p-5 bg-[#2f3748]">
+            <img
+              src="https://wallpapers.com/images/hd/beautiful-nature-pictures-2c29nke7owomq7la.jpg"
+              alt="Fiskil Screenshot"
+              class="w-full rounded-lg"
+            />
+          </div>
+          <div class="content-section flex-1 p-10 flex flex-col justify-center">
+            <h1 class="skill_title text-2xl mb-5 text-white">Fiskil</h1>
+            <p class="skill_p text-base leading-6 mb-5 text-white">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis
+              in faucibus orci luctus et ultrices posuere cubilia curae.
+            </p>
+            <div class="tags flex flex-wrap gap-2">
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >React</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >Next.js</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >Typescript</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >Nest.js</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >PostgreSQL</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >Tailwindcss</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >Figma</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >Cypress</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >Storybook</span
+              >
+              <span
+                class="bg-[#4b5563] px-4 py-2 rounded-full text-sm text-[#dfe3e8]"
+                >Git</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- project 2 section end -->
+
+      <!-- contact section start -->
+      <section id="contact" class="contact px-4 bg-gray-200 py-8">
+        <h2 class="text-2xl mb-6">Contact Me</h2>
+        <form class="flex flex-col">
+          <input
+            type="text"
+            placeholder="Your Name"
+            required
+            class="mb-2 p-2 border-none rounded-md outline-none"
+          />
+          <input
+            type="email"
+            placeholder="Your Email"
+            required
+            class="mb-2 p-2 border-none rounded-md outline-none"
+          />
+          <textarea
+            placeholder="Your Message"
+            rows="6"
+            required
+            class="mb-2 p-2 border-none rounded-md outline-none"
+          ></textarea>
+          <button
+            type="submit"
+            class="p-2 bg-gray-500 text-white rounded-lg cursor-pointer transition-colors duration-300 ease-in-out hover:bg-gray-400"
+          >
+            Send Message
+          </button>
+        </form>
+      </section>
+
+      <!-- contact section end -->
+    </main>
+    <!-- footer section start -->
+    <footer class="text-center py-5 bg-gray-800 !text-white w-full">
+      <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+    </footer>
+
+    <!-- footer section end -->
+
+    <!-- JavaScript for Mobile Nav -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script>
+      const mobileMenu = document.getElementById("mobile-menu");
+      const nav = document.querySelector(".nav");
+
+      mobileMenu.addEventListener("click", () => {
+        nav.classList.toggle("active");
+      });
+    </script> -->
+    <script>
+      const mobileMenu = document.getElementById("mobile-menu");
+      const nav = document.querySelector(".nav");
+
+      mobileMenu.addEventListener("click", () => {
+        nav.classList.toggle("hidden"); // Toggle visibility by adding/removing the 'hidden' class
+      });
+    </script>
+  </body>
+</html>
